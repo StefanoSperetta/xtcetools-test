@@ -732,7 +732,91 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
+
+            <xtce:FloatParameterType name="RAP1_fwd_P_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>mW</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="2">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>256</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP1_fwd_P_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>2</xtce:ValueOperand>
+                            <xtce:Operator>^</xtce:Operator>
+                            <xtce:ValueOperand>0.000478</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
             
+            <xtce:FloatParameterType name="RAP2_fwd_P_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>mW</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="4">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>64</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP2_fwd_P_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>2</xtce:ValueOperand>
+                            <xtce:Operator>^</xtce:Operator>
+                            <xtce:ValueOperand>0.000478</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
+            
+            <xtce:FloatParameterType name="RAP1_refl_P_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>mW</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="6">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>16</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP1_refl_P_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>2</xtce:ValueOperand>
+                            <xtce:Operator>^</xtce:Operator>
+                            <xtce:ValueOperand>0.000478</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
+            
+            <xtce:FloatParameterType name="RAP2_refl_P_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>mW</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="8">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>4</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP2_refl_P_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>2</xtce:ValueOperand>
+                            <xtce:Operator>^</xtce:Operator>
+                            <xtce:ValueOperand>0.000478</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
+                        
             <xtce:FloatParameterType name="Power_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>W</xtce:Unit>
@@ -898,10 +982,20 @@
             <xtce:Parameter name="RAP2_Tx_I_Partial" parameterTypeRef="UInt2"/>
             <xtce:Parameter name="RAP2_Tx_I" parameterTypeRef="RAP2_Tx_I_Type"/>
 
-            <xtce:Parameter name="RAP1_fwd_P" parameterTypeRef="Power_Type"/>
+            <xtce:Parameter name="RAP1_fwd_P_Partial" parameterTypeRef="UInt8"/>
+            <xtce:Parameter name="RAP1_fwd_P" parameterTypeRef="RAP1_fwd_P_Type"/>
+            <xtce:Parameter name="RAP2_fwd_P_Partial" parameterTypeRef="UInt6"/>
+            <xtce:Parameter name="RAP2_fwd_P" parameterTypeRef="RAP2_fwd_P_Type"/>
+            <xtce:Parameter name="RAP1_refl_P_Partial" parameterTypeRef="UInt4"/>
+            <xtce:Parameter name="RAP1_refl_P" parameterTypeRef="RAP1_refl_P_Type"/>
+            <xtce:Parameter name="RAP2_refl_P_Partial" parameterTypeRef="UInt2"/>
+            <xtce:Parameter name="RAP2_refl_P" parameterTypeRef="RAP2_refl_P_Type"/>
+            
+            <!--xtce:Parameter name="RAP1_fwd_P" parameterTypeRef="Power_Type"/>
             <xtce:Parameter name="RAP2_fwd_P" parameterTypeRef="Power_Type"/>
             <xtce:Parameter name="RAP1_refl_P" parameterTypeRef="Power_Type"/>
-            <xtce:Parameter name="RAP2_refl_P" parameterTypeRef="Power_Type"/>
+            <xtce:Parameter name="RAP2_refl_P" parameterTypeRef="Power_Type"/-->
+            
             <xtce:Parameter name="RAP1_RSSI" parameterTypeRef="Power_Type"/>
             <xtce:Parameter name="RAP2_RSSI" parameterTypeRef="Power_Type"/>
 
@@ -1019,10 +1113,20 @@
                     
                     <!-- Sequence checked up to here, it is correct -->
                     <!-- Byte 39 -->
+                    <xtce:ParameterRefEntry parameterRef="RAP1_fwd_P_Partial"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP2_fwd_P_Partial"/>
                     <xtce:ParameterRefEntry parameterRef="RAP1_fwd_P"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP1_refl_P_Partial"/>
                     <xtce:ParameterRefEntry parameterRef="RAP2_fwd_P"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP2_refl_P_Partial"/>
                     <xtce:ParameterRefEntry parameterRef="RAP1_refl_P"/>
                     <xtce:ParameterRefEntry parameterRef="RAP2_refl_P"/>
+                    <!--xtce:ParameterRefEntry parameterRef="RAP1_fwd_P"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP2_fwd_P"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP1_refl_P"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP2_refl_P"/-->
+                    
+                    
                     <xtce:ParameterRefEntry parameterRef="RAP1_RSSI"/>
                     <xtce:ParameterRefEntry parameterRef="RAP2_RSSI"/>
 
