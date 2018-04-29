@@ -580,21 +580,6 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-
-            <xtce:FloatParameterType name="I_Type">
-                <xtce:UnitSet>
-                    <xtce:Unit>A</xtce:Unit>
-                </xtce:UnitSet>
-                <xtce:IntegerDataEncoding sizeInBits="10">
-                    <xtce:DefaultCalibrator> 
-                        <xtce:MathOperationCalibrator>    
-                            <xtce:ThisParameterOperand/>   
-                            <xtce:ValueOperand>0.000395</xtce:ValueOperand>   
-                            <xtce:Operator>*</xtce:Operator> 
-                        </xtce:MathOperationCalibrator>   
-                    </xtce:DefaultCalibrator> 
-                </xtce:IntegerDataEncoding>
-            </xtce:FloatParameterType>
             
             <xtce:FloatParameterType name="FM430_I_Type">
                 <xtce:UnitSet>
@@ -608,8 +593,8 @@
                             <xtce:Operator>*</xtce:Operator>
                             <xtce:ParameterInstanceRefOperand parameterRef="FM430_I_Partial"/>
                             <xtce:Operator>+</xtce:Operator>
-                            <!--xtce:ValueOperand>0.000395</xtce:ValueOperand>   
-                            <xtce:Operator>*</xtce:Operator--> 
+                            <xtce:ValueOperand>0.000395</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
@@ -627,8 +612,8 @@
                             <xtce:Operator>*</xtce:Operator>
                             <xtce:ParameterInstanceRefOperand parameterRef="MeBo_Zp_I_Partial"/>
                             <xtce:Operator>+</xtce:Operator>
-                            <!--xtce:ValueOperand>0.000395</xtce:ValueOperand>   
-                            <xtce:Operator>*</xtce:Operator--> 
+                            <xtce:ValueOperand>0.000395</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
@@ -646,8 +631,8 @@
                             <xtce:Operator>*</xtce:Operator>
                             <xtce:ParameterInstanceRefOperand parameterRef="MeBo_Zm_I_Partial"/>
                             <xtce:Operator>+</xtce:Operator>
-                            <!--xtce:ValueOperand>0.000395</xtce:ValueOperand>   
-                            <xtce:Operator>*</xtce:Operator--> 
+                            <xtce:ValueOperand>0.000395</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
@@ -665,8 +650,84 @@
                             <xtce:Operator>*</xtce:Operator>
                             <xtce:ParameterInstanceRefOperand parameterRef="ComBo_I_Partial"/>
                             <xtce:Operator>+</xtce:Operator>
-                            <!--xtce:ValueOperand>0.000395</xtce:ValueOperand>   
-                            <xtce:Operator>*</xtce:Operator--> 
+                            <xtce:ValueOperand>0.000395</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
+
+            <xtce:FloatParameterType name="RAP1_Rx_I_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>A</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="2">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>256</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP1_Rx_I_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>0.000395</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
+            
+            <xtce:FloatParameterType name="RAP1_Tx_I_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>A</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="4">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>64</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP1_Tx_I_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>0.000395</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
+            
+            <xtce:FloatParameterType name="RAP2_Rx_I_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>A</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="6">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>16</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP2_Rx_I_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>0.000395</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
+            
+            <xtce:FloatParameterType name="RAP2_Tx_I_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>A</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="8">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>4</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP2_Tx_I_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>0.000395</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
@@ -827,10 +888,15 @@
             <xtce:Parameter name="MeBo_Zm_I" parameterTypeRef="MeBo_Zm_I_Type"/>
             <xtce:Parameter name="ComBo_I_Partial" parameterTypeRef="UInt2"/>
             <xtce:Parameter name="ComBo_I" parameterTypeRef="ComBo_I_Type"/>
-            <xtce:Parameter name="RAP1_Rx_I" parameterTypeRef="I_Type"/>
-            <xtce:Parameter name="RAP1_Tx_I" parameterTypeRef="I_Type"/>
-            <xtce:Parameter name="RAP2_Rx_I" parameterTypeRef="I_Type"/>
-            <xtce:Parameter name="RAP2_Tx_I" parameterTypeRef="I_Type"/>
+            
+            <xtce:Parameter name="RAP1_Rx_I_Partial" parameterTypeRef="UInt8"/>
+            <xtce:Parameter name="RAP1_Rx_I" parameterTypeRef="RAP1_Rx_I_Type"/>
+            <xtce:Parameter name="RAP1_Tx_I_Partial" parameterTypeRef="UInt6"/>
+            <xtce:Parameter name="RAP1_Tx_I" parameterTypeRef="RAP1_Tx_I_Type"/>
+            <xtce:Parameter name="RAP2_Rx_I_Partial" parameterTypeRef="UInt4"/>
+            <xtce:Parameter name="RAP2_Rx_I" parameterTypeRef="RAP2_Rx_I_Type"/>
+            <xtce:Parameter name="RAP2_Tx_I_Partial" parameterTypeRef="UInt2"/>
+            <xtce:Parameter name="RAP2_Tx_I" parameterTypeRef="RAP2_Tx_I_Type"/>
 
             <xtce:Parameter name="RAP1_fwd_P" parameterTypeRef="Power_Type"/>
             <xtce:Parameter name="RAP2_fwd_P" parameterTypeRef="Power_Type"/>
@@ -847,22 +913,17 @@
 
             <xtce:Parameter name="AWSS_frame_1" parameterTypeRef="AWSS_Type"/>
            
-
             <xtce:Parameter name="AWSS_frame_2" parameterTypeRef="AWSS_Type"/>        
-
-                       
+  
             <xtce:Parameter name="RD_IV_V_ZpXp" parameterTypeRef="RD_IV_V_Type"/>
             <xtce:Parameter name="RD_IV_V_ZpXm" parameterTypeRef="RD_IV_V_Type"/>
             <xtce:Parameter name="RD_IV_I_ZpXp" parameterTypeRef="RD_IV_I_Type"/>
             <xtce:Parameter name="RD_IV_I_ZpXm" parameterTypeRef="RD_IV_I_Type"/>            
 
-
             <xtce:Parameter name="RD_IV_V_ZmYm" parameterTypeRef="RD_IV_V_Type"/>
             <xtce:Parameter name="RD_IV_V_ZmYp" parameterTypeRef="RD_IV_V_Type"/>
             <xtce:Parameter name="RD_IV_I_ZmYm" parameterTypeRef="RD_IV_I_Type"/>
             <xtce:Parameter name="RD_IV_I_ZmYp" parameterTypeRef="RD_IV_I_Type"/>
-            
-          
             
         </xtce:ParameterSet>
         <xtce:ContainerSet>
@@ -946,13 +1007,18 @@
                     <xtce:ParameterRefEntry parameterRef="MeBo_Zm_I"/>
                     <xtce:ParameterRefEntry parameterRef="ComBo_I"/>
                     
-                    <!-- Sequence checked up to here, it is correct -->
-                    <!-- Byte 34 -->
+                    <!-- Byte 34 --> 
+                    <xtce:ParameterRefEntry parameterRef="RAP1_Rx_I_Partial"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP1_Tx_I_Partial"/>
                     <xtce:ParameterRefEntry parameterRef="RAP1_Rx_I"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP2_Rx_I_Partial"/>
                     <xtce:ParameterRefEntry parameterRef="RAP1_Tx_I"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP2_Tx_I_Partial"/>
                     <xtce:ParameterRefEntry parameterRef="RAP2_Rx_I"/>
                     <xtce:ParameterRefEntry parameterRef="RAP2_Tx_I"/>
-
+                    
+                    <!-- Sequence checked up to here, it is correct -->
+                    <!-- Byte 39 -->
                     <xtce:ParameterRefEntry parameterRef="RAP1_fwd_P"/>
                     <xtce:ParameterRefEntry parameterRef="RAP2_fwd_P"/>
                     <xtce:ParameterRefEntry parameterRef="RAP1_refl_P"/>
@@ -979,12 +1045,6 @@
                     <xtce:ParameterRefEntry parameterRef="RD_IV_V_ZmYp"/>
                     <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZmYm"/>
                     <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZmYp"/>
-
-
-
-
-
-                    
                 </xtce:EntryList>
                 <xtce:BaseContainer containerRef="Telemetry">
                         <xtce:RestrictionCriteria>
