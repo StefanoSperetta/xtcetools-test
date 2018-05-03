@@ -936,6 +936,7 @@
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
+                <xtce:ValidRange minExclusive="-68.0" maxExclusive="149.6"/>
             </xtce:FloatParameterType>
 
             <xtce:FloatParameterType name="RAP2_T_Type">
@@ -957,6 +958,7 @@
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
+                <xtce:ValidRange minExclusive="-68.0" maxExclusive="149.6"/>
             </xtce:FloatParameterType>
         </xtce:ParameterTypeSet>
         
