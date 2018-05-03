@@ -243,13 +243,13 @@
 
             <xtce:FloatParameterType name="RD_IV_I_Type">
                 <xtce:UnitSet>
-                    <xtce:Unit>A</xtce:Unit>
+                    <xtce:Unit>uA</xtce:Unit>
                 </xtce:UnitSet>
                 <xtce:IntegerDataEncoding sizeInBits="8">
                     <xtce:DefaultCalibrator> 
                         <xtce:MathOperationCalibrator>    
                             <xtce:ThisParameterOperand/>   
-                            <xtce:ValueOperand>0.000004</xtce:ValueOperand>   
+                            <xtce:ValueOperand>4</xtce:ValueOperand>   
                             <xtce:Operator>*</xtce:Operator>
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
@@ -258,13 +258,13 @@
             
             <xtce:FloatParameterType name="RD_IV_V_Type">
                 <xtce:UnitSet>
-                    <xtce:Unit>V</xtce:Unit>
+                    <xtce:Unit>mV</xtce:Unit>
                 </xtce:UnitSet>
                 <xtce:IntegerDataEncoding sizeInBits="8">
                     <xtce:DefaultCalibrator> 
                         <xtce:MathOperationCalibrator>    
                             <xtce:ThisParameterOperand/>   
-                            <xtce:ValueOperand>0.002</xtce:ValueOperand>   
+                            <xtce:ValueOperand>2</xtce:ValueOperand>   
                             <xtce:Operator>*</xtce:Operator> 
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
@@ -278,9 +278,9 @@
                     <xtce:Member name="I_ZpXp" typeRef="RD_IV_I_Type"/>
                     <xtce:Member name="I_ZpXm" typeRef="RD_IV_I_Type"/>
                     
-                    <xtce:Member name="V_ZmYp" typeRef="RD_IV_V_Type"/>
                     <xtce:Member name="V_ZmYm" typeRef="RD_IV_V_Type"/>
-                    <xtce:Member name="I_ZmYp" typeRef="RD_IV_I_Type"/>
+                    <xtce:Member name="V_ZmYp" typeRef="RD_IV_V_Type"/>
+                    <xtce:Member name="I_ZmYm" typeRef="RD_IV_I_Type"/>
                     <xtce:Member name="I_ZmYp" typeRef="RD_IV_I_Type"/>
                 </xtce:MemberList>
             </xtce:AggregateParameterType>
@@ -936,7 +936,7 @@
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
-                <xtce:ValidRange minExclusive="-68.0" maxExclusive="149.6"/>
+                <xtce:ValidRange minExclusive="-68.0" maxExclusive="149.6" validRangeAppliesToCalibrated="true"/>
             </xtce:FloatParameterType>
 
             <xtce:FloatParameterType name="RAP2_T_Type">
@@ -958,7 +958,7 @@
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
-                <xtce:ValidRange minExclusive="-68.0" maxExclusive="149.6"/>
+                <xtce:ValidRange minExclusive="-68.0" maxExclusive="149.6" validRangeAppliesToCalibrated="true"/>
             </xtce:FloatParameterType>
         </xtce:ParameterTypeSet>
         
