@@ -817,32 +817,75 @@
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
                         
-            <xtce:FloatParameterType name="Power_Type">
+            <xtce:FloatParameterType name="RAP1_RSSI_Type">
                 <xtce:UnitSet>
-                    <xtce:Unit>W</xtce:Unit>
+                    <xtce:Unit>V</xtce:Unit>
                 </xtce:UnitSet>
-                <xtce:IntegerDataEncoding sizeInBits="10">
+                <xtce:IntegerDataEncoding sizeInBits="2">
                     <xtce:DefaultCalibrator> 
                         <xtce:MathOperationCalibrator>    
-                            <!--should be like this to have the square of the parameter-->
                             <xtce:ThisParameterOperand/>   
-                            <xtce:ThisParameterOperand/>
+                            <xtce:ValueOperand>256</xtce:ValueOperand>
                             <xtce:Operator>*</xtce:Operator>
-                            <xtce:ValueOperand>0.000478</xtce:ValueOperand>   
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP1_RSSI_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>0.00323</xtce:ValueOperand>   
                             <xtce:Operator>*</xtce:Operator> 
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-
-            <xtce:FloatParameterType name="RAP_V_Type">
+            
+            <xtce:FloatParameterType name="RAP2_RSSI_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>V</xtce:Unit>
                 </xtce:UnitSet>
-                <xtce:IntegerDataEncoding sizeInBits="10">
+                <xtce:IntegerDataEncoding sizeInBits="4">
                     <xtce:DefaultCalibrator> 
                         <xtce:MathOperationCalibrator>    
                             <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>64</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP2_RSSI_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>0.00323</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
+            
+            <xtce:FloatParameterType name="RAP1_doppler_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>V</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="6">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>16</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP1_doppler_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>0.00323</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
+            </xtce:FloatParameterType>
+            
+            <xtce:FloatParameterType name="RAP2_doppler_Type">
+                <xtce:UnitSet>
+                    <xtce:Unit>V</xtce:Unit>
+                </xtce:UnitSet>
+                <xtce:IntegerDataEncoding sizeInBits="8">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>4</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP2_doppler_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
                             <xtce:ValueOperand>0.00323</xtce:ValueOperand>   
                             <xtce:Operator>*</xtce:Operator> 
                         </xtce:MathOperationCalibrator>   
@@ -850,14 +893,18 @@
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
 
-            <xtce:FloatParameterType name="RAP_T_Type">
+            <xtce:FloatParameterType name="RAP1_T_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>°C</xtce:Unit>
                 </xtce:UnitSet>
-                <xtce:IntegerDataEncoding sizeInBits="10">
+                <xtce:IntegerDataEncoding sizeInBits="2">
                     <xtce:DefaultCalibrator> 
                         <xtce:MathOperationCalibrator>    
                             <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>256</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP1_T_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
                             <xtce:ValueOperand>0.213</xtce:ValueOperand>   
                             <xtce:Operator>*</xtce:Operator> 
                             <xtce:ValueOperand>68.1</xtce:ValueOperand>   
@@ -866,18 +913,29 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-
-            <xtce:FloatParameterType name="test_Type" sizeInBits="32" shortDescription="Calculated battery state of charge">
+            
+            <xtce:FloatParameterType name="RAP2_T_Type">
                 <xtce:UnitSet>
-                    <xtce:Unit>Percent</xtce:Unit>
+                    <xtce:Unit>°C</xtce:Unit>
                 </xtce:UnitSet>
-						
+                <xtce:IntegerDataEncoding sizeInBits="4">
+                    <xtce:DefaultCalibrator> 
+                        <xtce:MathOperationCalibrator>    
+                            <xtce:ThisParameterOperand/>   
+                            <xtce:ValueOperand>64</xtce:ValueOperand>
+                            <xtce:Operator>*</xtce:Operator>
+                            <xtce:ParameterInstanceRefOperand parameterRef="RAP2_T_Partial"/>
+                            <xtce:Operator>+</xtce:Operator>
+                            <xtce:ValueOperand>0.213</xtce:ValueOperand>   
+                            <xtce:Operator>*</xtce:Operator> 
+                            <xtce:ValueOperand>68.1</xtce:ValueOperand>   
+                            <xtce:Operator>-</xtce:Operator> 
+                        </xtce:MathOperationCalibrator>   
+                    </xtce:DefaultCalibrator> 
+                </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-
-            <!-- The following represents a bit pattern of some telemetry value using a binary type with binary data encoding.
-            This type as defined here is not much different from the Unsigned8BitInteger type defined above except
-            the telemetry values using this type are interpreted as hex bit patterns rather than as numbers.    -->
         </xtce:ParameterTypeSet>
+        
         <!-- These are the parameters that can be used in containers. -->
         <xtce:ParameterSet>
             <!-- These are parameters that may be used in abstract telemetry or command containers to define system-level settings. -->
@@ -991,14 +1049,22 @@
             <xtce:Parameter name="RAP2_refl_P_Partial" parameterTypeRef="UInt2"/>
             <xtce:Parameter name="RAP2_refl_P" parameterTypeRef="RAP2_refl_P_Type"/>
             
-            <xtce:Parameter name="RAP1_RSSI" parameterTypeRef="Power_Type"/>
-            <xtce:Parameter name="RAP2_RSSI" parameterTypeRef="Power_Type"/>
-
-            <xtce:Parameter name="RAP1_doppler_V" parameterTypeRef="RAP_V_Type"/>
-            <xtce:Parameter name="RAP2_doppler_V" parameterTypeRef="RAP_V_Type"/>
-
-            <xtce:Parameter name="RAP1_T" parameterTypeRef="RAP_T_Type"/>
-            <xtce:Parameter name="RAP2_T" parameterTypeRef="RAP_T_Type"/>
+            <xtce:Parameter name="RAP1_RSSI_Partial" parameterTypeRef="UInt8"/>
+            <xtce:Parameter name="RAP1_RSSI" parameterTypeRef="RAP1_RSSI_Type"/>
+            <xtce:Parameter name="RAP2_RSSI_Partial" parameterTypeRef="UInt6"/>
+            <xtce:Parameter name="RAP2_RSSI" parameterTypeRef="RAP2_RSSI_Type"/>
+            <xtce:Parameter name="RAP1_doppler_Partial" parameterTypeRef="UInt4"/>
+            <xtce:Parameter name="RAP1_doppler" parameterTypeRef="RAP1_doppler_Type"/>
+            <xtce:Parameter name="RAP2_doppler_Partial" parameterTypeRef="UInt2"/>
+            <xtce:Parameter name="RAP2_doppler" parameterTypeRef="RAP2_doppler_Type"/>
+            
+            <xtce:Parameter name="RAP1_T_Partial" parameterTypeRef="UInt8"/>
+            <xtce:Parameter name="RAP1_T" parameterTypeRef="RAP1_T_Type"/>
+            <xtce:Parameter name="RAP2_T_Partial" parameterTypeRef="UInt6"/>
+            <xtce:Parameter name="RAP2_T" parameterTypeRef="RAP2_T_Type"/>
+            <xtce:Parameter name="Padding2" parameterTypeRef="UInt4"/>
+            <!--xtce:Parameter name="RAP1_T" parameterTypeRef="RAP_T_Type"/>
+            <xtce:Parameter name="RAP2_T" parameterTypeRef="RAP_T_Type"/-->
 
             <xtce:Parameter name="AWSS_frame_1" parameterTypeRef="AWSS_Type"/>
             <xtce:Parameter name="AWSS_frame_2" parameterTypeRef="AWSS_Type"/>        
@@ -1115,16 +1181,25 @@
                     <xtce:ParameterRefEntry parameterRef="RAP1_refl_P"/>
                     <xtce:ParameterRefEntry parameterRef="RAP2_refl_P"/>
                     
-                    <!-- Sequence checked up to here, it is correct -->
                     <!-- Byte 44 -->
+                    <xtce:ParameterRefEntry parameterRef="RAP1_RSSI_Partial"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP2_RSSI_Partial"/>
                     <xtce:ParameterRefEntry parameterRef="RAP1_RSSI"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP1_doppler_Partial"/>
                     <xtce:ParameterRefEntry parameterRef="RAP2_RSSI"/>
-                    <xtce:ParameterRefEntry parameterRef="RAP1_doppler_V"/>
-                    <xtce:ParameterRefEntry parameterRef="RAP2_doppler_V"/>
-
+                    <xtce:ParameterRefEntry parameterRef="RAP2_doppler_Partial"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP1_doppler"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP2_doppler"/>
+                    
+                    <!-- Byte 49 -->
+                    <xtce:ParameterRefEntry parameterRef="RAP1_T_Partial"/>
+                    <xtce:ParameterRefEntry parameterRef="RAP2_T_Partial"/>
                     <xtce:ParameterRefEntry parameterRef="RAP1_T"/>
+                    <xtce:ParameterRefEntry parameterRef="Padding2"/>
                     <xtce:ParameterRefEntry parameterRef="RAP2_T"/>
 
+                    <!-- Sequence checked up to here, it is correct -->
+                    <!-- Byte 52 -->
                     <xtce:ParameterRefEntry parameterRef="AWSS_frame_1"/>
                     <xtce:ParameterRefEntry parameterRef="AWSS_frame_2"/>
                     
@@ -1184,9 +1259,8 @@
                         </xtce:RestrictionCriteria>
                 </xtce:BaseContainer>
             </xtce:SequenceContainer>
-
-            
         </xtce:ContainerSet>
+        
         <xtce:StreamSet>
             <xtce:VariableFrameStream name="TLM" shortDescription="Telemetry stream">
                 <xtce:ContainerRef containerRef="Telemetry"/>
