@@ -984,7 +984,7 @@
             <xtce:Parameter name="TFSC_T_ZmYm" parameterTypeRef="TFSC_T_ZmY_Type"/>     
             <xtce:Parameter name="TFSC_T_ZmYp" parameterTypeRef="TFSC_T_ZmY_Type"/>            
            
-            <xtce:Parameter name="AWSS_frame" parameterTypeRef="AWSS_Type"/>
+            <xtce:Parameter name="AWSS" parameterTypeRef="AWSS_Type"/>
             <xtce:Parameter name="RD" parameterTypeRef="RD_Type"/>
 
             <xtce:Parameter name="PICStatus_EMP" parameterTypeRef="PICStatusType"/>
@@ -1077,9 +1077,6 @@
             <xtce:Parameter name="RAP2_T" parameterTypeRef="RAP2_T_Type"/>
             <xtce:Parameter name="Padding2" parameterTypeRef="UInt4"/>
 
-            <xtce:Parameter name="AWSS_frame_1" parameterTypeRef="AWSS_Type"/>
-            <xtce:Parameter name="AWSS_frame_2" parameterTypeRef="AWSS_Type"/>        
-  
         </xtce:ParameterSet>
         <xtce:ContainerSet>
 			
@@ -1201,9 +1198,14 @@
 
                     <!-- Sequence checked up to here, it is correct -->
                     <!-- Byte 52 -->
-                    <xtce:ParameterRefEntry parameterRef="AWSS_frame_1"/>
-                    <xtce:ParameterRefEntry parameterRef="AWSS_frame_2"/>
-                    
+                    <xtce:ParameterRefEntry parameterRef="AWSS">
+                        <xtce:RepeatEntry>
+                            <xtce:Count>
+                                <xtce:FixedValue>2</xtce:FixedValue>
+                            </xtce:Count>
+                        </xtce:RepeatEntry>
+                    </xtce:ParameterRefEntry>
+
                     <xtce:ParameterRefEntry parameterRef="RD"/>                              
 
                 </xtce:EntryList>
@@ -1232,7 +1234,7 @@
                     
                     <xtce:ParameterRefEntry parameterRef="RD"/>
 
-                    <xtce:ParameterRefEntry parameterRef="AWSS_frame"/>
+                    <xtce:ParameterRefEntry parameterRef="AWSS"/>
                 </xtce:EntryList>
                 <xtce:BaseContainer containerRef="Telemetry">
                         <xtce:RestrictionCriteria>
