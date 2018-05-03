@@ -239,6 +239,8 @@
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>	
 
+            <!--          Reference Diodes           -->
+
             <xtce:FloatParameterType name="RD_IV_I_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>A</xtce:Unit>
@@ -268,6 +270,20 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>	
+
+            <xtce:AggregateParameterType name="RD_Type">
+                <xtce:MemberList>
+                    <xtce:Member name="V_ZpXp" typeRef="RD_IV_V_Type"/>
+                    <xtce:Member name="V_ZpXm" typeRef="RD_IV_V_Type"/>
+                    <xtce:Member name="I_ZpXp" typeRef="RD_IV_I_Type"/>
+                    <xtce:Member name="I_ZpXm" typeRef="RD_IV_I_Type"/>
+                    
+                    <xtce:Member name="V_ZmYp" typeRef="RD_IV_V_Type"/>
+                    <xtce:Member name="V_ZmYm" typeRef="RD_IV_V_Type"/>
+                    <xtce:Member name="I_ZmYp" typeRef="RD_IV_I_Type"/>
+                    <xtce:Member name="I_ZmYp" typeRef="RD_IV_I_Type"/>
+                </xtce:MemberList>
+            </xtce:AggregateParameterType>
 
             <!--          Z_AWSS           -->
             
@@ -494,7 +510,7 @@
                     <xtce:Member name="time_stamp_Zm" typeRef="time_stamp_Z_Type"/>                   
                 </xtce:MemberList>
             </xtce:AggregateParameterType>
-		
+
             <xtce:EnumeratedParameterType name="PICStatusType">
                 <xtce:UnitSet/>
                 <xtce:IntegerDataEncoding sizeInBits="1"/>
@@ -733,6 +749,7 @@
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
 
+            <!-- TODO: put the real calibration formula to get the real forward power -->
             <xtce:FloatParameterType name="RAP1_fwd_P_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>mW</xtce:Unit>
@@ -753,7 +770,8 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-            
+
+            <!-- TODO: put the real calibration formula to get the real forward power -->
             <xtce:FloatParameterType name="RAP2_fwd_P_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>mW</xtce:Unit>
@@ -774,7 +792,8 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-            
+
+            <!-- TODO: put the real calibration formula to get the real reflected power -->
             <xtce:FloatParameterType name="RAP1_refl_P_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>mW</xtce:Unit>
@@ -795,7 +814,8 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-            
+
+            <!-- TODO: put the real calibration formula to get the real reflected power -->
             <xtce:FloatParameterType name="RAP2_refl_P_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>mW</xtce:Unit>
@@ -816,7 +836,8 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-                        
+
+            <!-- TODO: put the real calibration formula to get the real RSSI -->
             <xtce:FloatParameterType name="RAP1_RSSI_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>V</xtce:Unit>
@@ -835,7 +856,8 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-            
+
+            <!-- TODO: put the real calibration formula to get the real RSSI -->
             <xtce:FloatParameterType name="RAP2_RSSI_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>V</xtce:Unit>
@@ -854,7 +876,8 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-            
+
+            <!-- TODO: put the real calibration formula to get the real doppler -->
             <xtce:FloatParameterType name="RAP1_doppler_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>V</xtce:Unit>
@@ -874,6 +897,7 @@
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
             
+            <!-- TODO: put the real calibration formula to get the real doppler -->
             <xtce:FloatParameterType name="RAP2_doppler_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>V</xtce:Unit>
@@ -913,7 +937,7 @@
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
             </xtce:FloatParameterType>
-            
+
             <xtce:FloatParameterType name="RAP2_T_Type">
                 <xtce:UnitSet>
                     <xtce:Unit>°C</xtce:Unit>
@@ -959,20 +983,9 @@
             <xtce:Parameter name="TFSC_T_ZpXm" parameterTypeRef="TFSC_T_ZpXm_Type"/>
             <xtce:Parameter name="TFSC_T_ZmYm" parameterTypeRef="TFSC_T_ZmY_Type"/>     
             <xtce:Parameter name="TFSC_T_ZmYp" parameterTypeRef="TFSC_T_ZmY_Type"/>            
-                      
-            <xtce:Parameter name="RD_IV_V_ZpXp" parameterTypeRef="RD_IV_V_Type"/> 
-            <xtce:Parameter name="RD_IV_V_ZpXm" parameterTypeRef="RD_IV_V_Type"/> 
-            <xtce:Parameter name="RD_IV_I_ZpXp" parameterTypeRef="RD_IV_I_Type"/>          
-            <xtce:Parameter name="RD_IV_I_ZpXm" parameterTypeRef="RD_IV_I_Type"/>
-           
-            <xtce:Parameter name="RD_IV_V_ZmYm" parameterTypeRef="RD_IV_V_Type"/>             
-            <xtce:Parameter name="RD_IV_V_ZmYp" parameterTypeRef="RD_IV_V_Type"/>
-            <xtce:Parameter name="RD_IV_I_ZmYm" parameterTypeRef="RD_IV_I_Type"/>         
-            <xtce:Parameter name="RD_IV_I_ZmYp" parameterTypeRef="RD_IV_I_Type"/>
-                        
            
             <xtce:Parameter name="AWSS_frame" parameterTypeRef="AWSS_Type"/>
-            
+            <xtce:Parameter name="RD" parameterTypeRef="RD_Type"/>
 
             <xtce:Parameter name="PICStatus_EMP" parameterTypeRef="PICStatusType"/>
             <xtce:Parameter name="PICStatus_AWP" parameterTypeRef="PICStatusType"/>
@@ -1063,22 +1076,10 @@
             <xtce:Parameter name="RAP2_T_Partial" parameterTypeRef="UInt6"/>
             <xtce:Parameter name="RAP2_T" parameterTypeRef="RAP2_T_Type"/>
             <xtce:Parameter name="Padding2" parameterTypeRef="UInt4"/>
-            <!--xtce:Parameter name="RAP1_T" parameterTypeRef="RAP_T_Type"/>
-            <xtce:Parameter name="RAP2_T" parameterTypeRef="RAP_T_Type"/-->
 
             <xtce:Parameter name="AWSS_frame_1" parameterTypeRef="AWSS_Type"/>
             <xtce:Parameter name="AWSS_frame_2" parameterTypeRef="AWSS_Type"/>        
   
-            <xtce:Parameter name="RD_IV_V_ZpXp" parameterTypeRef="RD_IV_V_Type"/>
-            <xtce:Parameter name="RD_IV_V_ZpXm" parameterTypeRef="RD_IV_V_Type"/>
-            <xtce:Parameter name="RD_IV_I_ZpXp" parameterTypeRef="RD_IV_I_Type"/>
-            <xtce:Parameter name="RD_IV_I_ZpXm" parameterTypeRef="RD_IV_I_Type"/>            
-
-            <xtce:Parameter name="RD_IV_V_ZmYm" parameterTypeRef="RD_IV_V_Type"/>
-            <xtce:Parameter name="RD_IV_V_ZmYp" parameterTypeRef="RD_IV_V_Type"/>
-            <xtce:Parameter name="RD_IV_I_ZmYm" parameterTypeRef="RD_IV_I_Type"/>
-            <xtce:Parameter name="RD_IV_I_ZmYp" parameterTypeRef="RD_IV_I_Type"/>
-            
         </xtce:ParameterSet>
         <xtce:ContainerSet>
 			
@@ -1203,16 +1204,8 @@
                     <xtce:ParameterRefEntry parameterRef="AWSS_frame_1"/>
                     <xtce:ParameterRefEntry parameterRef="AWSS_frame_2"/>
                     
-                    <!--fixed order-->                                
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_V_ZpXp"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_V_ZpXm"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZpXp"/> 
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZpXm"/>
+                    <xtce:ParameterRefEntry parameterRef="RD"/>                              
 
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_V_ZmYm"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_V_ZmYp"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZmYm"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZmYp"/>
                 </xtce:EntryList>
                 <xtce:BaseContainer containerRef="Telemetry">
                         <xtce:RestrictionCriteria>
@@ -1237,16 +1230,7 @@
                     <xtce:ParameterRefEntry parameterRef="TFSC_T_ZmYm"/>
                     <xtce:ParameterRefEntry parameterRef="TFSC_T_ZmYp"/>
                     
-                    <!--ORDER CHANGED-->
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_V_ZpXp"/> 
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_V_ZpXm"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZpXp"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZpXm"/>
-
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_V_ZmYm"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_V_ZmYp"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZmYm"/>
-                    <xtce:ParameterRefEntry parameterRef="RD_IV_I_ZmYp"/>
+                    <xtce:ParameterRefEntry parameterRef="RD"/>
 
                     <xtce:ParameterRefEntry parameterRef="AWSS_frame"/>
                 </xtce:EntryList>
