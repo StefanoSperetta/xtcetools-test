@@ -6,3 +6,8 @@ dependency-reduced-pom.xml
 nb-configuration.xml
 
 nbactions.xml
+
+src/main/java/AX25Lib/*
+src/main/java/dcgs/*
+src/main/java/dc3com/*
+src/main/java/rascal/*
