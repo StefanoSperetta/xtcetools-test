@@ -203,6 +203,7 @@
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
+                <xtce:ValidRange minExclusive="-234.0" maxExclusive="133.0" validRangeAppliesToCalibrated="true"/>
             </xtce:FloatParameterType>	
 
             <xtce:FloatParameterType name="TFSC_T_ZpXm_Type">
@@ -220,6 +221,7 @@
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
+                <xtce:ValidRange minExclusive="-234.0" maxExclusive="133.0" validRangeAppliesToCalibrated="true"/>
             </xtce:FloatParameterType>
 
             <xtce:FloatParameterType name="TFSC_T_ZmY_Type">
@@ -237,6 +239,7 @@
                         </xtce:MathOperationCalibrator>   
                     </xtce:DefaultCalibrator> 
                 </xtce:IntegerDataEncoding>
+                <xtce:ValidRange minExclusive="-234.0" maxExclusive="133.0" validRangeAppliesToCalibrated="true"/>
             </xtce:FloatParameterType>	
 
             <!--          Reference Diodes           -->
